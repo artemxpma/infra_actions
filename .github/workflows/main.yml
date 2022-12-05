@@ -68,7 +68,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_UBUNTU }}
+        key: ${{ secrets.SSH_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker pull artemxpma/infra-test
           sudo docker stop $(sudo docker ps -a -q)
